@@ -1,4 +1,4 @@
-var hours = [6, 7, 8 , 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20, 21];
+var hours = ['6 am', '7 am', ' 8 am' , '9 am', '10 am ', ' 11 am', ' 12 pm', '1 pm', '2 pm', '3 pm', '4 pm', '5 pm', '6 pm', '7 pm', '8 pm', '9 pm'];
 
 var firstP = document.getElementById('first');
 
@@ -13,8 +13,8 @@ var firstPike = {
     this.customerCalc = Math.floor(Math.random() * (this.maxCust - this.minCust)+ this.minCust);
   },
 };
-for ( i = 0, i > hours.length, i++); {
-var liEl = document.createElement('li');
-liEl.textContent = hours[i];
-firstP.appendChild(liEl);
+for (var i = 0; i < hours.length; i++) {
+  var liEl = document.createElement('li');
+  liEl.textContent = hours[i];
+  firstP.appendChild(liEl);
 }
