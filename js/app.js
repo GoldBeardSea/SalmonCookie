@@ -184,6 +184,7 @@ SalmonCookies.prototype.totalCook = function() {
 
 var alkiBeach = new SalmonCookies('Alki Beach', 2, 6, 4.6);
 console.log(alkiBeach);
+alkiBeach.render();
 
 
 // var beAlki = document.getElementById('five');
