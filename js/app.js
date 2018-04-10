@@ -80,5 +80,27 @@ var seaTac = {
 };
 seaTac.render();
 
+var seaCent = document.getElementById('third');
 
+var seaCent = {
+  minCust: 11,
+  maxCust: 38,
+  avgSale: 3.7,
+  totalSale: 0,
+  salesByHour: [],
+  randCustHour: function () {
+    return Math.floor(Math.random() * (this.maxCrust - this.minCust)+ this.minCust);
+  },
+  render: function () {
+    for (var i = 0; i < hours.length; i++)
+      var custPerHour = this.randCustHour();
+    var salesPerHour = Math.floor(custPerHour * this.avgSale);
+    this.salesByHour.push(salesPerHour);
+    var liEl = document.createElement('li');
+    liEl.textContent = hours[i] + this.salesByHour[i] + ' cookies.';
+    tacSea.appendChild(liEl);
+  }
+  this.totalCook();
+},
+};
 
