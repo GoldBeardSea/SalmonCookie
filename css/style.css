@@ -1,0 +1,46 @@
+body {
+  background-color: rgb(135, 172, 252);
+  margin: 20px 20px;
+  padding: 5px;
+  text-align: center;
+}
+
+h1 {
+  font-size: 40px;
+  margin: 10px;
+}
+
+p {
+  font-size: 30px;
+  margin: 10px;
+  padding: 5px;
+}
+
+h2 {
+  font-size: 20px;
+  margin: 10px 10px;
+}
+
+.salmon {
+    display: block;
+    margin: auto;
+    width: 50%;
+}
+
+
+#hours {
+  margin: auto;
+  border: solid black;
+  position: relative;
+  width: 25%;
+  background-color: salmon;
+  text-align: center
+}
+
+#location {
+  border:solid black;
+  margin: auto;
+  position: relative;
+  width: 25%;
+  text-align: center;
+}
