@@ -82,25 +82,34 @@ seaTac.render();
 
 var seaCent = document.getElementById('third');
 
-var seaCent = {
+var centSea = {
   minCust: 11,
   maxCust: 38,
   avgSale: 3.7,
   totalSale: 0,
   salesByHour: [],
   randCustHour: function () {
-    return Math.floor(Math.random() * (this.maxCrust - this.minCust)+ this.minCust);
+    return Math.floor(Math.random() * (this.maxCust - this.minCust)+ this.minCust);
   },
   render: function () {
-    for (var i = 0; i < hours.length; i++)
+    for (var i = 0; i < hours.length; i++) {
       var custPerHour = this.randCustHour();
-    var salesPerHour = Math.floor(custPerHour * this.avgSale);
-    this.salesByHour.push(salesPerHour);
+      var salesPerHour = Math.floor(custPerHour * this.avgSale);
+      this.salesByHour.push(salesPerHour);
+      var liEl = document.createElement('li');
+      liEl.textContent = hours[i] + this.salesByHour[i] + ' cookies.';
+      seaCent.appendChild(liEl);
+    }
+    this.totalCook();
+  },
+  totalCook: function() {
+    for (var i = 0; i < this.salesByHour.length; i++) {
+      this.totalSale += this.salesByHour[i];
+    }
     var liEl = document.createElement('li');
-    liEl.textContent = hours[i] + this.salesByHour[i] + ' cookies.';
-    tacSea.appendChild(liEl);
-  }
-  this.totalCook();
-},
+    liEl.textContent = 'Total: ' + this.totalSale + ' cookies.';
+    seaCent.appendChild(liEl);
+  },
 };
+centSea.render();
 
