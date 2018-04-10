@@ -150,8 +150,8 @@ var hours = ['6 am:', '7 am', ' 8 am:' , '9 am:', '10 am: ', ' 11 am:', ' 12 pm:
 
 var beAlki = document.getElementById('five');
 
-function SalmonCookies(minCust, maxCust, avgSale) {
-  this.name = 'Alki Beach';
+function SalmonCookies(name, minCust, maxCust, avgSale) {
+  this.name = name;
   this.totalSale = 0;
   this.minCust = minCust;
   this.maxCust = maxCust;
@@ -180,41 +180,42 @@ SalmonCookies.prototype.totalCook = function() {
   var liEl = document.createElement('li');
   liEl.textContent = 'Total: ' + this.totalSale + ' cookies.';
   beAlki.appendChild(liEl);
-},
 };
-alkiBe.render();
+
+var alkiBeach = new SalmonCookies('Alki Beach', 2, 6, 4.6);
+console.log(alkiBeach);
 
 
-var beAlki = document.getElementById('five');
+// var beAlki = document.getElementById('five');
 
-var alkiBe = {
-  minCust: 2,
-  maxCust: 16,
-  avgSale: 4.6,
-  totalSale: 0,
-  salesByHour: [],
-  randCustHour: function () {
-    return Math.floor(Math.random() * (this.maxCust - this.minCust)+ this.minCust);
-  },
-  render: function () {
-    for (var i = 0; i < hours.length; i++) {
-      var custPerHour = this.randCustHour();
-      var salesPerHour = Math.floor(custPerHour * this.avgSale);
-      this.salesByHour.push(salesPerHour);
-      var liEl = document.createElement('li');
-      liEl.textContent = hours[i] + this.salesByHour[i] + ' cookies.';
-      beAlki.appendChild(liEl);
-    }
-    this.totalCook();
-  },
-  totalCook: function() {
-    for (var i = 0; i < this.salesByHour.length; i++) {
-      this.totalSale += this.salesByHour[i];
-    }
-    var liEl = document.createElement('li');
-    liEl.textContent = 'Total: ' + this.totalSale + ' cookies.';
-    beAlki.appendChild(liEl);
-  },
-};
-alkiBe.render();
+// var alkiBe = {
+//   minCust: 2,
+//   maxCust: 16,
+//   avgSale: 4.6,
+//   totalSale: 0,
+//   salesByHour: [],
+//   randCustHour: function () {
+//     return Math.floor(Math.random() * (this.maxCust - this.minCust)+ this.minCust);
+//   },
+//   render: function () {
+//     for (var i = 0; i < hours.length; i++) {
+//       var custPerHour = this.randCustHour();
+//       var salesPerHour = Math.floor(custPerHour * this.avgSale);
+//       this.salesByHour.push(salesPerHour);
+//       var liEl = document.createElement('li');
+//       liEl.textContent = hours[i] + this.salesByHour[i] + ' cookies.';
+//       beAlki.appendChild(liEl);
+//     }
+//     this.totalCook();
+//   },
+//   totalCook: function() {
+//     for (var i = 0; i < this.salesByHour.length; i++) {
+//       this.totalSale += this.salesByHour[i];
+//     }
+//     var liEl = document.createElement('li');
+//     liEl.textContent = 'Total: ' + this.totalSale + ' cookies.';
+//     beAlki.appendChild(liEl);
+//   },
+// };
+// alkiBe.render();
 
