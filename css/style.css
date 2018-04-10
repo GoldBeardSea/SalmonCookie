@@ -1,0 +1,62 @@
+body {
+  background-color: seagreen;
+  margin: 20px 20px;
+  padding: 5px;
+  text-align: center;
+}
+
+h1 {
+  font-size: 40px;
+  margin: 10px;
+  color: lightblue;
+}
+
+p {
+  font-size: 30px;
+  margin: 10px;
+  padding: 5px;
+}
+
+h2 {
+  font-size: 20px;
+  margin: 10px 10px;
+}
+
+.salmon {
+    display: block;
+    margin: auto;
+    width: 50%;
+}
+
+
+#hours {
+  margin: auto;
+  border: solid black;
+  border-radius: 50%;
+  padding: 5px;
+  position: relative;
+  width: 25%;
+  background-color: salmon;
+  color: rgb(9, 84, 223);
+  text-align: center
+}
+
+#location {
+  border:solid black;
+  border-radius: 50%;
+  margin: auto;
+  padding: 5px;
+  position: relative;
+  width: 25%;
+  background-color: seashell;
+  color: red;
+  text-align: center;
+}
+
+#contact {
+  padding: 5px;
+  position: relative;
+  width: 25%;
+  text-align: center;
+  list-style-type: disc;
+}
