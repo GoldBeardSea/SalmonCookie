@@ -146,7 +146,7 @@ var capHill = {
 };
 capHill.render();
 
-var beAlki = document.getElementById('four');
+var beAlki = document.getElementById('five');
 
 var alkiBe = {
   minCust: 2,
