@@ -113,3 +113,68 @@ var centSea = {
 };
 centSea.render();
 
+var hillCap = document.getElementById('four');
+
+var capHill = {
+  minCust: 20,
+  maxCust: 38,
+  avgSale: 2.3,
+  totalSale: 0,
+  salesByHour: [],
+  randCustHour: function () {
+    return Math.floor(Math.random() * (this.maxCust - this.minCust)+ this.minCust);
+  },
+  render: function () {
+    for (var i = 0; i < hours.length; i++) {
+      var custPerHour = this.randCustHour();
+      var salesPerHour = Math.floor(custPerHour * this.avgSale);
+      this.salesByHour.push(salesPerHour);
+      var liEl = document.createElement('li');
+      liEl.textContent = hours[i] + this.salesByHour[i] + ' cookies.';
+      hillCap.appendChild(liEl);
+    }
+    this.totalCook();
+  },
+  totalCook: function() {
+    for (var i = 0; i < this.salesByHour.length; i++) {
+      this.totalSale += this.salesByHour[i];
+    }
+    var liEl = document.createElement('li');
+    liEl.textContent = 'Total: ' + this.totalSale + ' cookies.';
+    hillCap.appendChild(liEl);
+  },
+};
+capHill.render();
+
+var beAlki = document.getElementById('four');
+
+var alkiBe = {
+  minCust: 2,
+  maxCust: 16,
+  avgSale: 4.6,
+  totalSale: 0,
+  salesByHour: [],
+  randCustHour: function () {
+    return Math.floor(Math.random() * (this.maxCust - this.minCust)+ this.minCust);
+  },
+  render: function () {
+    for (var i = 0; i < hours.length; i++) {
+      var custPerHour = this.randCustHour();
+      var salesPerHour = Math.floor(custPerHour * this.avgSale);
+      this.salesByHour.push(salesPerHour);
+      var liEl = document.createElement('li');
+      liEl.textContent = hours[i] + this.salesByHour[i] + ' cookies.';
+      beAlki.appendChild(liEl);
+    }
+    this.totalCook();
+  },
+  totalCook: function() {
+    for (var i = 0; i < this.salesByHour.length; i++) {
+      this.totalSale += this.salesByHour[i];
+    }
+    var liEl = document.createElement('li');
+    liEl.textContent = 'Total: ' + this.totalSale + ' cookies.';
+    beAlki.appendChild(liEl);
+  },
+};
+alkiBe.render();
