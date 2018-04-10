@@ -148,43 +148,59 @@ var hours = ['6 am:', '7 am', ' 8 am:' , '9 am:', '10 am: ', ' 11 am:', ' 12 pm:
 // };
 // capHill.render();
 
-var beAlki = document.getElementById('five');
+var allSales = [];
+var allStores = document.getElementById('sales');
 
 function SalmonCookies(name, minCust, maxCust, avgSale) {
   this.name = name;
-  this.totalSale = 0;
   this.minCust = minCust;
   this.maxCust = maxCust;
   this.avgSale = avgSale;
   this.salesByHour = [];
+  this.totalSale = 0;
+  allSales.push(this);
+
+}
+function hoursGeneration () {
+  for (var i = 0; i < hours.length; i++) {
+    var thEl = document.createElement('th');
+    thEl.textContent = hours[i];
+    allStores.appendChild(thEl);
+  }
 }
 
 SalmonCookies.prototype.randCustHour = function () {
   return Math.floor(Math.random() * (this.maxCust - this.minCust)+ this.minCust);
 };
-SalmonCookies.prototype.render = function () {
+
+SalmonCookies.prototype.populatingSales = function () {
   for (var i = 0; i < hours.length; i++) {
     var custPerHour = this.randCustHour();
     var salesPerHour = Math.floor(custPerHour * this.avgSale);
     this.salesByHour.push(salesPerHour);
-    var liEl = document.createElement('li');
-    liEl.textContent = hours[i] + this.salesByHour[i] + ' cookies.';
-    beAlki.appendChild(liEl);
   }
   this.totalCook();
 };
+
+SalmonCookies.prototype.render = function () {
+  for (var i = 0 < hours.length; i++) {
+    var 
+  }
+}
+
 SalmonCookies.prototype.totalCook = function() {
   for (var i = 0; i < this.salesByHour.length; i++) {
     this.totalSale += this.salesByHour[i];
   }
-  var liEl = document.createElement('li');
-  liEl.textContent = 'Total: ' + this.totalSale + ' cookies.';
-  beAlki.appendChild(liEl);
 };
 
-var alkiBeach = new SalmonCookies('Alki Beach', 2, 6, 4.6);
+var alkiBeach = new SalmonCookies('Alki Beach', 2, 16, 4.6);
+var firstAndPike = new SalmonCookies('First and Pike', 23, 65, 6.3);
 console.log(alkiBeach);
-alkiBeach.render();
+alkiBeach.populatingSales();
+firstAndPike.populatingSales();
+hoursGeneration();
+
 
 
 // var beAlki = document.getElementById('five');
