@@ -1,6 +1,6 @@
 'use strict';
 
-var hours = ['6 am:', '7 am', ' 8 am:' , '9 am:', '10 am: ', ' 11 am:', ' 12 pm:', '1 pm:', '2 pm:', '3 pm:', '4 pm:', '5 pm:', '6 pm:', '7 pm:', '8 pm:', '9 pm:'];
+var hours = ['location', '6 am:', '7 am', ' 8 am:' , '9 am:', '10 am: ', ' 11 am:', ' 12 pm:', '1 pm:', '2 pm:', '3 pm:', '4 pm:', '5 pm:', '6 pm:', '7 pm:', '8 pm:', ' Daily Location Total'];
 
 // var firstP = document.getElementById('first');
 
@@ -174,7 +174,7 @@ SalmonCookies.prototype.randCustHour = function () {
 };
 
 SalmonCookies.prototype.populatingSales = function () {
-  for (var i = 0; i < hours.length; i++) {
+  for (var i = 1; i < hours.length - 1; i++) {
     var custPerHour = this.randCustHour();
     var salesPerHour = Math.floor(custPerHour * this.avgSale);
     this.salesByHour.push(salesPerHour);
@@ -183,23 +183,40 @@ SalmonCookies.prototype.populatingSales = function () {
 };
 
 SalmonCookies.prototype.render = function () {
-  for (var i = 0 < hours.length; i++) {
-    var 
+  var trElement = document.createElement('tr');
+  var thEl = document.createElement('th');
+  thEl.textContent = this.name;
+  trElement.appendChild(thEl);
+
+  for (var i = 0; i < this.salesByHour.length; i++) {
+    var tdElement = document.createElement('td');
+    tdElement.textContent = this.salesByHour[i];
+    trElement.appendChild(tdElement);
   }
-}
+  tdElement = document.createElement('td');
+  tdElement.textContent = this.totalSale;
+  trElement.appendChild(tdElement);
+  allStores.appendChild(trElement);
+};
+
 
 SalmonCookies.prototype.totalCook = function() {
   for (var i = 0; i < this.salesByHour.length; i++) {
     this.totalSale += this.salesByHour[i];
   }
+  console.log(this.totalSale);
 };
 
-var alkiBeach = new SalmonCookies('Alki Beach', 2, 16, 4.6);
 var firstAndPike = new SalmonCookies('First and Pike', 23, 65, 6.3);
+var alkiBeach = new SalmonCookies('Alki Beach', 2, 16, 4.6);
+
 console.log(alkiBeach);
 alkiBeach.populatingSales();
 firstAndPike.populatingSales();
 hoursGeneration();
+firstAndPike.render();
+alkiBeach.render();
+
 
 
 
