@@ -60,3 +60,34 @@ h2 {
   text-align: center;
   list-style-type: disc;
 }
+
+td, th {
+
+  border: 1px solid red;
+  background-color:whitesmoke;
+  font-family: sans-serif;
+  font-size: 24px;
+}
+
+#saleh {
+  text-align: left;
+  font-family: sans-serif;
+}
+
+.box {
+  margin: auto;
+  position: relative;
+  width: 55%;
+  text-align: center;
+  background-color: whitesmoke;
+  border: transparent;
+  border-radius: 25%;
+}
+
+#indexlink {
+  text-align: left;
+}
+
+footer {
+  font-size: 2px;
+}
