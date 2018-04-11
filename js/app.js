@@ -71,6 +71,7 @@ var seaTac = new SalmonCookies ('Seatac', 3, 24, 1.2);
 var seaCent = new SalmonCookies ('Seattle Center', 11, 38, 3.7);
 var capHill = new SalmonCookies ('Capitol Hill', 20, 38, 2.3);
 var alkiBeach = new SalmonCookies('Alki Beach', 2, 16, 4.6);
+var randomStore = new SalmonCookies('Invented Store', 22, 45, 4.9);
 
 console.log(alkiBeach);
 firstAndPike.populatingSales();
@@ -78,6 +79,7 @@ seaTac.populatingSales();
 seaCent.populatingSales();
 capHill.populatingSales();
 alkiBeach.populatingSales();
+randomStore.populatingSales();
 
 hoursGeneration();
 
@@ -86,4 +88,5 @@ seaTac.renderTable();
 seaCent.renderTable();
 capHill.renderTable();
 alkiBeach.renderTable();
+randomStore.renderTable();
 
