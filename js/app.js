@@ -66,6 +66,8 @@ SalmonCookies.prototype.totalCook = function() {
   console.log(this.totalSale);
 };
 
+
+
 var firstAndPike = new SalmonCookies('First and Pike', 23, 65, 6.3);
 var seaTac = new SalmonCookies ('Seatac', 3, 24, 1.2);
 var seaCent = new SalmonCookies ('Seattle Center', 11, 38, 3.7);
@@ -90,3 +92,16 @@ capHill.renderTable();
 alkiBeach.renderTable();
 randomStore.renderTable();
 
+function handleSalesFormSubmitted(event) {
+  // stop the page from refreshing
+  event.preventDefault();
+  console.log('the form was submitted!');
+  var formElement = event.target;
+  var newStore = new SalmonCookies(formElement.name.value, Number(formElement.minCust.value), Number(formElement.maxCust.value), Number(formElement.avgSale.value));
+  console.log(newStore);
+  newStore.populatingSales();
+  newStore.renderTable();
+  //(formElement.name, minCust, maxCust, avgSale);
+}
+var salesFormElement = document.getElementById('add-store-form');
+salesFormElement.addEventListener('submit', handleSalesFormSubmitted);
