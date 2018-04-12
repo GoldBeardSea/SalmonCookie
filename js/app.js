@@ -94,6 +94,7 @@ function callAll () {
   for (var i = 0; i < allSales.length ; i++) {
     allSales[i].populatingSales();
     allSales[i].renderTable();
+
   }
 }
 callAll();
@@ -104,9 +105,13 @@ function handleSalesFormSubmitted(event) {
   var formElement = event.target;
   var newStore = new SalmonCookies(formElement.name.value, Number(formElement.minCust.value), Number(formElement.maxCust.value), Number(formElement.avgSale.value));
   console.log(newStore);
+  document.getElementById('sales').deleteRow(-1);
   newStore.populatingSales();
   newStore.renderTable();
+  allStoresColumns = [];
   calculateColumns();
+  renderColumnTotalTable();
+
 }
 var salesFormElement = document.getElementById('add-store-form');
 salesFormElement.addEventListener('submit', handleSalesFormSubmitted);
@@ -124,23 +129,24 @@ function calculateColumns () {
 }
 calculateColumns();
 
-function populateColumn
-var trElement = document.createElement('tr');
-var thEl = document.createElement('th');
-thEl.textContent = 'Hourly Total';
-trElement.appendChild(thEl);
-// below is for loop that builds table based on array length and populates sale by hour
-for (var i = 0; i < this.allStoresColumns.length ; i++) {
-  var tdElement = document.createElement('td');
-  tdElement.textContent = this.allStoresColumns[i];
+function renderColumnTotalTable () {
+  var trElement = document.createElement('tr');
+  var thEl = document.createElement('th');
+  thEl.textContent = 'Hourly Total';
+  trElement.appendChild(thEl);
+  // below is for loop that builds table based on array length and populates sale by hour
+  for (var i = 0; i < allStoresColumns.length ; i++) {
+    var tdElement = document.createElement('td');
+    tdElement.textContent = allStoresColumns[i];
+    trElement.appendChild(tdElement);
+  }
+  // below adds table elements to end to populate total sale
+  tdElement = document.createElement('td');
+  tdElement.textContent = 'Total';
   trElement.appendChild(tdElement);
+  allStores.appendChild(trElement);
 }
-// below adds table elements to end to populate total sale
-tdElement = document.createElement('td');
-tdElement.textContent = 'Total';
-trElement.appendChild(tdElement);
-allStores.appendChild(trElement);
-
+renderColumnTotalTable();
 
 
 // function callAll () {
