@@ -103,3 +103,7 @@ td:nth-of-type(2n+2) {
 footer {
   font-size: 2px;
 }
+
+#intro {
+  text-align: left;
+}
