@@ -1,32 +1,32 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <title>Salmon Cookie Store</title>
+    <title>Salmon Cookie Store Sales</title>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width">
+    <link rel="stylesheet" href="css/reset.css">
     <link href="css/style.css" rel="stylesheet" type="text/css" />
   </head>
   <body>
     <h1 id="saleh">Salmon Cookie Spectacular Cookie Requirements</h1>
-    <p></p>
+    <p id="intro">For additional store information add in your metrics and store name into form at the bottom.</p>
     <h2></h2>
-
     <table id="sales"></table>
     <h3></h>      
-    <p id="indexlink"><a href="index.html">front page</a></p>
-
     <form id="add-store-form">
-      <label for="name-input">Name</label>
-      <input type="text" id="name-input" name="name" />
+      <fieldset>
+      <label for="name-input" >Name</label>
+      <input type="text" id="name-input" name="name" required/>
       <label for="minCust-input">minCust</label>
-      <input type="text" id="minCust-input" name="minCust" />
+      <input type="number" id="minCust-input" name="minCust" required/>
       <label for="maxCust-input">maxCust</label>
-      <input type="text" id="maxCust-input" name="maxCust" />
+      <input type="number" id="maxCust-input" name="maxCust" required/>
       <label for="avgSale-input">avgSale</label>
-      <input type="text" id="avgSale-input" name="avgSale" />
+      <input type="number" id="avgSale-input" name="avgSale" step=0.1 required/>
       <input type="submit" />
+      </fieldset>
     </form>
-    
+    <p id="indexlink"><a href="index.html">front page</a></p>
     <script src="js/app.js"></script>
   </body>
 </html>

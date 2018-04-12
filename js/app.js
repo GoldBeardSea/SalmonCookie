@@ -1,6 +1,6 @@
 'use strict';
 //below are global variables
-var hours = ['location', '6 am:', '7 am', ' 8 am:' , '9 am:', '10 am: ', ' 11 am:', ' 12 pm:', '1 pm:', '2 pm:', '3 pm:', '4 pm:', '5 pm:', '6 pm:', '7 pm:', '8 pm:', ' Daily Location Total'];
+var hours = ['Location', '6 am', '7 am', ' 8 am' , '9 am', '10 am ', ' 11 am', ' 12 pm', '1 pm', '2 pm', '3 pm', '4 pm', '5 pm', '6 pm', '7 pm', '8 pm', ' Daily Total'];
 var allSales = [];
 var allStores = document.getElementById('sales');
 
@@ -66,12 +66,13 @@ SalmonCookies.prototype.totalCook = function() {
   console.log(this.totalSale);
 };
 
+
+
 var firstAndPike = new SalmonCookies('First and Pike', 23, 65, 6.3);
 var seaTac = new SalmonCookies ('Seatac', 3, 24, 1.2);
 var seaCent = new SalmonCookies ('Seattle Center', 11, 38, 3.7);
 var capHill = new SalmonCookies ('Capitol Hill', 20, 38, 2.3);
 var alkiBeach = new SalmonCookies('Alki Beach', 2, 16, 4.6);
-var randomStore = new SalmonCookies('Invented Store', 22, 45, 4.9);
 
 console.log(alkiBeach);
 firstAndPike.populatingSales();
@@ -79,7 +80,6 @@ seaTac.populatingSales();
 seaCent.populatingSales();
 capHill.populatingSales();
 alkiBeach.populatingSales();
-randomStore.populatingSales();
 
 hoursGeneration();
 
@@ -88,5 +88,17 @@ seaTac.renderTable();
 seaCent.renderTable();
 capHill.renderTable();
 alkiBeach.renderTable();
-randomStore.renderTable();
 
+function handleSalesFormSubmitted(event) {
+  // stop the page from refreshing
+  event.preventDefault();
+  console.log('the form was submitted!');
+  var formElement = event.target;
+  var newStore = new SalmonCookies(formElement.name.value, Number(formElement.minCust.value), Number(formElement.maxCust.value), Number(formElement.avgSale.value));
+  console.log(newStore);
+  newStore.populatingSales();
+  newStore.renderTable();
+  //(formElement.name, minCust, maxCust, avgSale);
+}
+var salesFormElement = document.getElementById('add-store-form');
+salesFormElement.addEventListener('submit', handleSalesFormSubmitted);
