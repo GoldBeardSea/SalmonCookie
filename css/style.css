@@ -69,6 +69,10 @@ td, th {
   font-size: 24px;
 }
 
+th {
+  background-color: salmon;
+}
+
 #saleh {
   text-align: left;
   font-family: sans-serif;
@@ -82,6 +86,10 @@ td, th {
   background-color: whitesmoke;
   border: transparent;
   border-radius: 25%;
+}
+
+td:nth-of-type(2n+2) {
+  background-color: gray;
 }
 
 #indexlink {
