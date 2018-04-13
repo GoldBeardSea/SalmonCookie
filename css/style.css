@@ -11,6 +11,21 @@ h1 {
   color: lightblue;
 }
 
+h3 {
+  color: white;
+  font-size: 30px;
+  margin-top: 25px;
+}
+
+
+.curve {
+  display: block;
+  margin: auto;
+  width: 25%;
+  border-radius: 25%;
+  margin-bottom: 25px;
+}
+
 p {
   font-size: 30px;
   margin: 10px;
@@ -25,9 +40,27 @@ h2 {
 .salmon {
     display: block;
     margin: auto;
-    width: 50%;
+    width: 35%;
 }
 
+.shirt {
+  display: block;
+    margin-left: auto;
+    margin-right: auto;
+    width: 300px;
+    height: 300px;
+
+}
+
+.merch {
+  width:  276px;
+  height: 175px;
+  background-position: 50% 50%;
+  background-repeat:   no-repeat;
+  background-size:     cover;
+  border-top-left-radius: 25%;
+  border-bottom-right-radius: 25%;
+}
 
 #hours {
   margin: auto;
@@ -94,6 +127,15 @@ td:nth-of-type(2n+2) {
   border: dashed black;
   background-color: gray;
   color: white;
+}
+
+#merch {
+  margin: auto;
+  width: 600px;
+  height: 600px;
+  background-color: white;
+  border-top-left-radius: 25%;
+  border-bottom-right-radius: 25%;
 }
 
 #indexlink {
