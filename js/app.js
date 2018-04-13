@@ -129,7 +129,9 @@ function calculateColumns () {
 }
 calculateColumns();
 
+
 function renderColumnTotalTable () {
+  var allStoresGrandTotal = 0;
   var trElement = document.createElement('tr');
   var thEl = document.createElement('th');
   thEl.textContent = 'Hourly Total';
@@ -139,10 +141,11 @@ function renderColumnTotalTable () {
     var tdElement = document.createElement('td');
     tdElement.textContent = allStoresColumns[i];
     trElement.appendChild(tdElement);
+    allStoresGrandTotal += allStoresColumns[i];
   }
   // below adds table elements to end to populate total sale
   tdElement = document.createElement('td');
-  tdElement.textContent = 'Total';
+  tdElement.textContent = allStoresGrandTotal;
   trElement.appendChild(tdElement);
   allStores.appendChild(trElement);
 }
