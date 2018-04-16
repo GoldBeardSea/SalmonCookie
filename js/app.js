@@ -68,13 +68,13 @@ SalmonCookies.prototype.totalCook = function() {
   console.log(this.totalSale);
 };
 
-var firstAndPike = new SalmonCookies('First and Pike', 23, 65, 6.3);
-var seaTac = new SalmonCookies ('Seatac', 3, 24, 1.2);
-var seaCent = new SalmonCookies ('Seattle Center', 11, 38, 3.7);
-var capHill = new SalmonCookies ('Capitol Hill', 20, 38, 2.3);
-var alkiBeach = new SalmonCookies('Alki Beach', 2, 16, 4.6);
+new SalmonCookies('First and Pike', 23, 65, 6.3);
+new SalmonCookies ('Seatac', 3, 24, 1.2);
+new SalmonCookies ('Seattle Center', 11, 38, 3.7);
+new SalmonCookies ('Capitol Hill', 20, 38, 2.3);
+new SalmonCookies('Alki Beach', 2, 16, 4.6);
 
-console.log(alkiBeach);
+// console.log(alkiBeach);
 // firstAndPike.populatingSales();
 // seaTac.populatingSales();
 // seaCent.populatingSales();
